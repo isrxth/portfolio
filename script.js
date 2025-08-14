@@ -460,73 +460,54 @@ let blogsData = [
             el.remove();
         });
         }
-
-
-        // Contact form setup
+        
+        // Contact form
         function setupContactForm() {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const formData = new FormData(contactForm);
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                
-                // Show loading state
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = `
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-spin">
-                        <path d="M21 12a9 9 0 11-6.219-8.56"/>
-                    </svg>
-                    Sending...
-                `;
-                
-                try {
-                    // If Formspree is not configured, show success message anyway
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok || contactForm.action.includes('your-form-id')) {
-                        showFormStatus('success', 'Thank you! Your message has been sent successfully.');
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    // Fallback to mailto
-                    const subject = encodeURIComponent('Message from Portfolio Website');
-                    const body = encodeURIComponent(`Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`);
-                    window.location.href = `mailto:your.email@example.com?subject=${subject}&body=${body}`;
-                    
-                    showFormStatus('success', 'Opening your email client...');
-                }
-                
-                // Reset button state
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = `
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-                        </svg>
-                        Send Message
-                    `;
-                }, 2000);
-            });
+          contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector(
+              'button[type="submit"]'
+            );
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-spin">
+                <path d="M21 12a9 9 0 11-6.219-8.56"/>
+            </svg>
+            Sending...
+        `;
+
+            setTimeout(() => {
+              showFormStatus(
+                "success",
+                "Thank you! Your message has been sent successfully."
+              );
+              contactForm.reset();
+
+              // Reset button
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                </svg>
+                Send Message
+            `;
+            }, 1500);
+          });
         }
 
         // Show form status message
         function showFormStatus(type, message) {
-            formStatus.className = `form-status ${type}`;
-            formStatus.textContent = message;
-            formStatus.style.display = 'block';
-            
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 5000);
+          formStatus.className = `form-status ${type}`;
+          formStatus.textContent = message;
+          formStatus.style.display = "block";
+
+          setTimeout(() => {
+            formStatus.style.display = "none";
+          }, 5000);
         }
 
         // Add spin animation for loading spinner
@@ -541,38 +522,3 @@ let blogsData = [
             }
         `;
         document.head.appendChild(style);
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            // Escape key closes mobile menu
-            if (e.key === 'Escape' && navLinksContainer.classList.contains('active')) {
-                navLinksContainer.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenuToggle.focus();
-            }
-        });
-
-        // Enhanced accessibility: Focus management
-        const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-        
-        function trapFocus(element) {
-            const focusableContent = element.querySelectorAll(focusableElements);
-            const firstFocusableElement = focusableContent[0];
-            const lastFocusableElement = focusableContent[focusableContent.length - 1];
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab') {
-                    if (e.shiftKey) {
-                        if (document.activeElement === firstFocusableElement) {
-                            lastFocusableElement.focus();
-                            e.preventDefault();
-                        }
-                    } else {
-                        if (document.activeElement === lastFocusableElement) {
-                            firstFocusableElement.focus();
-                            e.preventDefault();
-                        }
-                    }
-                }
-            });
-        }
