@@ -4,8 +4,8 @@ const projectsData = [
                 description: "Full-stack e-commerce solution with React frontend and Node.js backend, featuring user authentication, shopping cart, and payment integration.",
                 tags: ["React", "Node.js", "MongoDB", "Stripe"],
                 image: "assets/img/project-01.jpg",
-                github: "https://github.com/username/ecommerce-platform",
-                demo: "https://ecommerce-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "web"
             },
             {
@@ -13,8 +13,8 @@ const projectsData = [
                 description: "Mobile-first task management application built with React Native, featuring offline support and real-time synchronization.",
                 tags: ["React Native", "Firebase", "Redux"],
                 image: "assets/img/project-02.jpg",
-                github: "https://github.com/username/task-manager",
-                demo: "https://taskmanager-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "mobile"
             },
             {
@@ -22,8 +22,8 @@ const projectsData = [
                 description: "Machine learning model for image classification using TensorFlow, deployed as a web service with Flask API.",
                 tags: ["Python", "TensorFlow", "Flask", "OpenCV"],
                 image: "assets/img/project-03.jpg",
-                github: "https://github.com/username/image-classifier",
-                demo: "https://classifier-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "ai"
             },
             {
@@ -31,8 +31,8 @@ const projectsData = [
                 description: "Real-time weather dashboard with interactive maps, forecasts, and location-based recommendations.",
                 tags: ["JavaScript", "Chart.js", "Weather API"],
                 image: "assets/img/project-04.jpg",
-                github: "https://github.com/username/weather-dashboard",
-                demo: "https://weather-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "web"
             },
             {
@@ -40,8 +40,8 @@ const projectsData = [
                 description: "Personal finance tracker with expense categorization, budget planning, and financial insights visualization.",
                 tags: ["Vue.js", "D3.js", "Express"],
                 image: "assets/img/project-05.jpg",
-                github: "https://github.com/username/budget-tracker",
-                demo: "https://budget-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "web"
             },
             {
@@ -49,16 +49,16 @@ const projectsData = [
                 description: "IoT device monitoring system with real-time data visualization and alert notifications.",
                 tags: ["Arduino", "MQTT", "Node.js", "WebSocket"],
                 image: "assets/img/project-06.jpg",
-                github: "https://github.com/username/iot-monitor",
-                demo: "https://iot-demo.com",
+                github: "https://github.com/isrxth",
+                demo: "#",
                 category: "misc"
             }
         ];
 
 let blogsData = [
-    { title: "The Future of JavaScript", category: "tech", excerpt: "Upcoming features and trends in the JS ecosystem.", link: "#" },
-    { title: "Minimalist Web Design Principles", category: "design", excerpt: "Tips for creating clean, user-friendly designs.", link: "#" },
-    { title: "Work From Anywhere: My Routine", category: "lifestyle", excerpt: "How I stay productive while traveling.", link: "#" },
+    { title: "How Markov Chain Power Text Prediction", category: "tech", excerpt: "Algorithm that made Billions.", link: "https://medium.com/@althaafalishrath/how-markov-chains-power-text-prediction-f7d3354264ff" },
+    { title: "Minimalist Web Design Principles", category: "design", excerpt: "Tips for creating clean, user-friendly designs.", link: "https://medium.com/@althaafalishrath/how-markov-chains-power-text-prediction-f7d3354264ff" },
+    { title: "Work From Anywhere: My Routine", category: "lifestyle", excerpt: "How I stay productive while traveling.", link: "https://medium.com/@althaafalishrath/how-markov-chains-power-text-prediction-f7d3354264ff" },
     // Add more blogs here...
 ];
         // Global variables
