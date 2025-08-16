@@ -252,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const cardFront = document.getElementById('card-front');
         const cardBack = document.getElementById('card-back');
 
-        // ---- Loader Animation 0-100%
         let progress = 0;
         const interval = 20;
         const duration = 1500;
@@ -265,9 +264,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 loaderText.textContent = `${Math.floor(progress)}%`;
                 clearInterval(timer);
 
-                // Wait a tiny bit so user sees 100%
                 setTimeout(() => {
-                    animateCard(); // Start card animation after everything loaded
+                    animateCard(); 
                 }, 300);
             }
             loaderText.textContent = `${Math.floor(progress)}%`;
@@ -275,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // ---- Card Animation Sequence
         function animateCard() {
-            // Slide card down and fade in
+
             introCard.style.top = '50%';
             introCard.style.opacity = '1';
             introCard.style.transform = 'translate(-50%, -50%) rotateY(0deg) scale(1)';
@@ -286,25 +284,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1200);
 
             setTimeout(() => {
-                // Flip card
+
                 introCard.style.transform = 'translate(-50%, -50%) rotateY(180deg) scale(1)';
             }, 1200);
 
             setTimeout(() => {
-                // Zoom card to fullscreen
+
                 introCard.style.transform = 'translate(-50%, -50%) rotateY(180deg) scale(10)';
 
-                // Wait for zoom transition to finish before fading loader
                 setTimeout(() => {
                     loadingScreen.style.transition = 'opacity 0.5s ease';
                     loadingScreen.style.opacity = '0';
                     setTimeout(() => {
                         loadingScreen.style.display = 'none';
                     }, 500);
-                }, 200); // <-- wait for zoom transition
+                }, 200);
             }, 2400);
 
-            // Optionally hide card after animation
             setTimeout(() => {
                 introCard.style.opacity = '0';
                 introCard.style.display = 'none';

@@ -249,7 +249,7 @@ body {
 /* Hero section */
 
 .hero-section {
-    min-height: 80vh;
+    min-height: 91vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -564,7 +564,7 @@ section:hover {
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 16px 48px var(--shadow);
+    box-shadow: 0 -2px 43px -20px var(--shadow);
     border-color: var(--accent-primary);
 }
 
@@ -636,7 +636,7 @@ section:hover {
 
 .blog-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px var(--shadow);
+    box-shadow: 0 -2px 43px -20px var(--shadow);
     border-color: var(--accent-secondary);
 }
 
