@@ -290,21 +290,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(() => {
 
-                introCard.style.transform = 'translate(-50%, -50%) rotateY(180deg) scale(10)';
+                introCard.style.transform = 'translate(-50%, -50%) rotateY(180deg) scale(9)';
 
                 setTimeout(() => {
                     loadingScreen.style.transition = 'opacity 0.5s ease';
                     loadingScreen.style.opacity = '0';
                     setTimeout(() => {
                         loadingScreen.style.display = 'none';
-                    }, 500);
-                }, 200);
-            }, 2400);
+                    }, 200);
+                }, 900);
+            }, 2000);
+            
+            setTimeout(() => {
+                cardBack.style.transition = 'filter 1.5s ease';
+                cardBack.style.filter = "blur(0px)";
+            }, 2000);
 
             setTimeout(() => {
+                cardBack.style.opacity = '0';
                 introCard.style.opacity = '0';
                 introCard.style.display = 'none';
-            }, 2800);
+            }, 3000);
         }
 });
 
