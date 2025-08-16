@@ -334,6 +334,7 @@ section:hover {
     transform: translateY(-4px);
     box-shadow: 6px 6px 0px var(--shadow);
     border-color: var(--accent-primary);
+    transition: transform 0.2s ease, transform 0.3s ease;
 }
 
 /* About Section */
@@ -655,6 +656,10 @@ section:hover {
     font-family: inherit;
     font-size: var(--font-size-base);
     transition: all var(--transition-fast);
+}
+
+.form-input:hover{
+    transform: scale(1.01); 
 }
 
 .form-input:focus {

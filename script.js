@@ -223,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(element);
     });
 
