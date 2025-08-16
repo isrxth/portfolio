@@ -10,9 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/fantasque-sans-mono" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="images/Tranquility.png" as="image">
+    <link rel="preload" href="images/bg2.png" as="image">
+    <link rel="preload" href="images/propic.png" as="image">
+    <link rel="preload" href="images/ef3-placeholder-image.jpg" as="image">
+
     
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-text">0%</div>
+    </div>
+
+    <!-- Card Animation -->
+    <div id="intro-card" class="card">
+        <div id="card-front">
+            <h2>Your Name</h2>
+            <p>Web Developer</p>
+        </div>
+        <div id="card-back">
+        </div>
+    </div>
+
     <!-- Light/Dark mode-->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
         <span class="theme-icon">🌙</span>
