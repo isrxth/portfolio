@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Loading Screen and Card Animation
     window.addEventListener('load', () => {
         const loadingScreen = document.getElementById('loading-screen');
-        const loaderText = loadingScreen.querySelector('.loader-text');
+        const loaderText = document.getElementById('loader-text');
         const introCard = document.getElementById('intro-card');
         const mainContent = document.getElementById('main-content');
         const cardFront = document.getElementById('card-front');
@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
             introCard.style.transform = 'translate(-50%, -50%) rotateY(0deg) scale(1)';
 
             setTimeout(() => {
+                loaderText.style.opacity = '0';
                 cardFront.style.opacity = '0';
             }, 1200);
 

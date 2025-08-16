@@ -151,10 +151,12 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
-.loader-text {
+#loader-text {
+  font-family: Montserrat, sans-serif;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 800;
   color: var(--text-primary);
+  opacity: 1;
 }
 
 /* Card */
@@ -189,6 +191,11 @@ body {
   flex-direction: column;
   opacity: 1;
   transition: opacity 0.5s ease;
+}
+
+#card-front h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
 }
 #card-back {
   transform: rotateY(180deg);
