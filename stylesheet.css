@@ -47,6 +47,14 @@
     --transition-fast: 0.15s ease-in-out;
     --transition-normal: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
+    
+    /* Blur */
+    --blur: 16px;
+    --bg: rgba(255, 255, 255, 0.10);   /* translucent fill */
+    --border: rgba(255, 255, 255, 0.35);
+    --shadow-blur: rgba(0, 0, 0, 0.25);
+
+    --bg-image: url('images/Tranquility.png'); /* Default background image */
 }
 
 /* Dark theme color overrides */
@@ -63,6 +71,10 @@
     --accent-tertiary: #b8b096; /* Yellow accent */
     --border-color: #E7DDBC;    /* Dark borders */
     --shadow: #e7ddbce8; /* Darker shadows */
+    --bg: rgba(20, 20, 20, 0.35);
+    --border: rgba(255, 255, 255, 0.18);
+    --shadow-blur: rgba(0, 0, 0, 0.35);
+    --bg-image: url('images/bg2.png'); /* Default background image */
 }
 
 /* ===========================================
@@ -102,7 +114,7 @@ body {
 
 .theme-toggle {
     position: fixed;
-    top: 20px;
+    top: 22px;
     right: var(--space-lg);
     z-index: 1000;
     background: var(--bg-tertiary);
@@ -183,15 +195,6 @@ body {
    HERO SECTION
    =========================================== */
 
-/*.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--space-2xl) var(--space-lg);
-}*/
-
 /* Hero section special styling */
 .hero-section {
     min-height: 80vh;
@@ -201,11 +204,51 @@ body {
     text-align: center;
     padding: var(--space-2xl) var(--space-lg);
     margin-top: 5.5rem;
+    background: var(--bg-image) no-repeat center center/cover; /* Replace with your background image */
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
 }
 
 .hero-content {
     max-width: 600px;
     animation: fadeInUp 1s ease-out;
+
+    position: relative;
+    width: min(540px, 92vw);
+    padding: 28px 32px;
+    border-radius: 18px;
+    background: linear-gradient( to bottom right,
+                rgba(255,255,255,0.18), rgba(255,255,255,0.06) );
+    background-color: var(--bg); /* fallback layer */
+    backdrop-filter: blur(var(--blur)) saturate(120%);
+    -webkit-backdrop-filter: blur(var(--blur)) saturate(120%); /* iOS/Safari */
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px var(--shadow-blur);
+
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%);
+  mask: linear-gradient(#000, transparent 60%);
 }
 
 .hero-name {
@@ -253,7 +296,6 @@ body {
 /* Updated section styles for window appearance */
 section {
     margin: var(--space-lg) 15px; /* Space between sections */
-    /*margin: var(--space-xl) auto var(--space-xl) 120px; /* Space between windows + dock offset */
     background: var(--bg-tertiary);
     border: 3px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -495,7 +537,7 @@ section:hover {
 
 .project-img {
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
     transition: transform var(--transition-slow);
 }
