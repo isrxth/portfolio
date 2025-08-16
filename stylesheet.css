@@ -1,21 +1,19 @@
-/* ===========================================
-   GRUVBOX COLOR PALETTE & CSS VARIABLES
-   =========================================== */
+/* Gruvbox Color Palette & Variables */
 
 :root {
-    /* Gruvbox Light Theme Colors */
-    --bg-primary: #fbf1c7;      /* Light cream background */
-    --bg-secondary: #f2e5bc;    /* Slightly darker cream */
-    --bg-tertiary: #fbf1c8;     /* Card backgrounds */
-    --text-primary: #3c3836;    /* Dark brown text */
-    --text-secondary: #504945;  /* Medium brown text */
-    --text-muted: #665c54;      /* Muted text */
-    --accent-primary: #383633;  /* Golden yellow accent */
-    --accent-secondary: #08D275; /* Blue accent */
-    --accent-glow: #08d2747c; /* Blue accent */
-    --accent-tertiary: #46433f; /* Dark yellow */
-    --border-color: #383633;    /* Light borders */
-    --shadow: #383633e3; /* Subtle shadows */
+    /* Light Theme Colors */
+    --bg-primary: #fbf1c7;      
+    --bg-secondary: #f2e5bc;    
+    --bg-tertiary: #fbf1c8;    
+    --text-primary: #3c3836;   
+    --text-secondary: #504945;  
+    --text-muted: #665c54;     
+    --accent-primary: #383633;  
+    --accent-secondary: #08D275; 
+    --accent-glow: #08d2747c; 
+    --accent-tertiary: #46433f; 
+    --border-color: #383633;    
+    --shadow: #383633e3;
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -50,36 +48,32 @@
     
     /* Blur */
     --blur: 16px;
-    --bg: rgba(255, 255, 255, 0.10);   /* translucent fill */
+    --bg: rgba(255, 255, 255, 0.10);   
     --border: rgba(255, 255, 255, 0.35);
     --shadow-blur: rgba(0, 0, 0, 0.25);
 
-    --bg-image: url('images/Tranquility.png'); /* Default background image */
+    --bg-image: url('images/Tranquility.png'); 
 }
 
-/* Dark theme color overrides */
+/* Dark theme color */
 [data-theme="dark"] {
-    --bg-primary: #282828;      /* Dark background */
-    --bg-secondary: #3c3836;    /* Slightly lighter dark */
-    --bg-tertiary: #292725;     /* Card backgrounds */
-    --text-primary: #fbf1c7;    /* Light cream text */
-    --text-secondary: #ebdbb2;  /* Medium cream text */
-    --text-muted: #bdae93;      /* Muted text */
-    --accent-primary: #E7DDBC;  /* Brighter yellow accent */
-    --accent-secondary: #08D275; /* Blue accent */
-    --accent-glow: #08d2747c; /* Blue accent */
-    --accent-tertiary: #b8b096; /* Yellow accent */
-    --border-color: #E7DDBC;    /* Dark borders */
-    --shadow: #e7ddbce8; /* Darker shadows */
+    --bg-primary: #282828;     
+    --bg-secondary: #3c3836;    
+    --bg-tertiary: #292725;     
+    --text-primary: #fbf1c7;    
+    --text-secondary: #ebdbb2;  
+    --text-muted: #bdae93;      
+    --accent-primary: #E7DDBC;  
+    --accent-secondary: #08D275; 
+    --accent-glow: #08d2747c; 
+    --accent-tertiary: #b8b096; 
+    --border-color: #E7DDBC;    
+    --shadow: #e7ddbce8; 
     --bg: rgba(20, 20, 20, 0.35);
     --border: rgba(255, 255, 255, 0.18);
     --shadow-blur: rgba(0, 0, 0, 0.35);
-    --bg-image: url('images/bg2.png'); /* Default background image */
+    --bg-image: url('images/bg2.png'); 
 }
-
-/* ===========================================
-   GLOBAL STYLES & RESET
-   =========================================== */
 
 * {
     margin: 0;
@@ -101,16 +95,13 @@ body {
     overflow-x: hidden;
 }
 
-/* Container for consistent max-width and centering */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-lg);
 }
 
-/* ===========================================
-   THEME TOGGLE BUTTON
-   =========================================== */
+/* Theme Toggle */
 
 .theme-toggle {
     position: fixed;
@@ -144,9 +135,7 @@ body {
     transform: rotate(15deg);
 }
 
-/* ===========================================
-   FLOATING DOCK NAVIGATION
-   =========================================== */
+/* FLOATING DOCK NAVIGATION */
 
 .dock-nav {
     position: fixed;
@@ -191,11 +180,8 @@ body {
     transform: scale(1.1);
 }
 
-/* ===========================================
-   HERO SECTION
-   =========================================== */
+/* Hero section */
 
-/* Hero section special styling */
 .hero-section {
     min-height: 80vh;
     display: flex;
@@ -204,7 +190,7 @@ body {
     text-align: center;
     padding: var(--space-2xl) var(--space-lg);
     margin-top: 5.5rem;
-    background: var(--bg-image) no-repeat center center/cover; /* Replace with your background image */
+    background: var(--bg-image) no-repeat center center/cover; 
 }
 
 .hero-section {
@@ -233,9 +219,9 @@ body {
     border-radius: 18px;
     background: linear-gradient( to bottom right,
                 rgba(255,255,255,0.18), rgba(255,255,255,0.06) );
-    background-color: var(--bg); /* fallback layer */
+    background-color: var(--bg);
     backdrop-filter: blur(var(--blur)) saturate(120%);
-    -webkit-backdrop-filter: blur(var(--blur)) saturate(120%); /* iOS/Safari */
+    -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px var(--shadow-blur);
 
@@ -285,17 +271,10 @@ body {
     box-shadow: 0 8px 24px var(--accent-glow);
 }
 
-/* ===========================================
-   SECTION STYLES
-   =========================================== */
+/* Section */
 
-/* ===========================================
-   HYPRLAND-STYLE FLOATING WINDOWS
-   =========================================== */
-
-/* Updated section styles for window appearance */
 section {
-    margin: var(--space-lg) 15px; /* Space between sections */
+    margin: var(--space-lg) 15px; 
     background: var(--bg-tertiary);
     border: 3px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -345,9 +324,8 @@ section::before {
     font-weight: 400;
 }
 
-/* Adjust section content padding for title bar */
 section .container {
-    padding-top: calc(var(--space-xl) + 40px); /* Account for title bar */
+    padding-top: calc(var(--space-xl) + 40px);
     padding-bottom: var(--space-xl);
 }
 
@@ -358,9 +336,7 @@ section:hover {
     border-color: var(--accent-primary);
 }
 
-/* ===========================================
-   ABOUT SECTION - BENTO BOX LAYOUT
-   =========================================== */
+/* About Section */
 
 .neofetch-container {
     background: var(--bg-primary);
@@ -433,7 +409,6 @@ section:hover {
 .color-block:nth-child(7) { background: #a89984; }
 .color-block:nth-child(8) { background: #928374; }
 
-/* Progress bars for skills */
 .skill-bar {
     display: flex;
     align-items: center;
@@ -457,14 +432,12 @@ section:hover {
 }
 
 
-/* ===========================================
-   MOBILE RESPONSIVE UPDATES
-   =========================================== */
+/* Responsive Code */
 
 @media (max-width: 768px) {
     section {
         margin: var(--space-lg) var(--space-md);
-        margin-bottom: calc(var(--space-lg) + 80px); /* Account for bottom dock */
+        margin-bottom: calc(var(--space-lg) + 80px); 
     }
     
     .neofetch-header {
@@ -504,9 +477,7 @@ section:hover {
     }
 }
 
-/* ===========================================
-   PROJECTS SECTION
-   =========================================== */
+/* Projects Section */
 
 .projects-grid {
     display: grid;
@@ -579,9 +550,7 @@ section:hover {
     color: var(--accent-primary);
 }
 
-/* ===========================================
-   BLOG SECTION
-   =========================================== */
+/* Blog Section */
 
 .blog-grid {
     display: grid;
@@ -639,9 +608,7 @@ section:hover {
     color: var(--accent-primary);
 }
 
-/* ===========================================
-   CONTACT SECTION
-   =========================================== */
+/* Contact form */
 
 .contact-content {
     max-width: 600px;
@@ -731,9 +698,7 @@ section:hover {
     animation: slideDown var(--transition-normal) ease-out;
 }
 
-/* ===========================================
-   FOOTER
-   =========================================== */
+/* Footer */
 
 .footer {
     background: var(--bg-tertiary);
@@ -770,9 +735,7 @@ section:hover {
     color: var(--accent-primary);
 }
 
-/* ===========================================
-   ANIMATIONS
-   =========================================== */
+/* Animation */
 
 @keyframes fadeInUp {
     from {
@@ -796,11 +759,9 @@ section:hover {
     }
 }
 
-/* ===========================================
-   RESPONSIVE DESIGN
-   =========================================== */
+/* Responsive Code */
 
-/* Tablet styles */
+/* Tablet */
 @media (max-width: 1024px) {
     .dock-nav {
         margin: 10px 10px 10px 4px;
@@ -820,7 +781,7 @@ section:hover {
     }
 }
 
-/* Mobile styles */
+/* Mobile*/
 @media (max-width: 768px) {
     /* Move dock to bottom for mobile */
     .dock-nav {
@@ -836,7 +797,6 @@ section:hover {
         gap: var(--space-sm);
     }
     
-    /* Remove margin for mobile since dock is at bottom */
     section {
         margin-left: 12px;
         padding: var(--space-2xl) 0 calc(var(--space-2xl) + 80px) 0;
@@ -889,7 +849,7 @@ section:hover {
     }
 }
 
-/* Small mobile styles */
+/* Small mobile */
 @media (max-width: 480px) {
     :root {
         --space-xs: 0.25rem;
@@ -940,51 +900,5 @@ section:hover {
     }
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    :root {
-        --shadow: rgba(0, 0, 0, 0.5);
-    }
-    
-    .bento-box,
-    .project-card,
-    .blog-card,
-    .contact-form {
-        border-width: 3px;
-    }
-}
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-/* Print styles */
-@media print {
-    .theme-toggle,
-    .dock-nav {
-        display: none;
-    }
-    
-    section {
-        margin-left: 0;
-    }
-    
-    .footer {
-        margin-left: 0;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-}
         
