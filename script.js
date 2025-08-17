@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    /* Theme Toggle */
+    // Theme Toggle
     
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = themeToggle.querySelector('.theme-icon');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     });
 
-    /* Scroll */
+    // Scroll 
     const navLinks = document.querySelectorAll('.dock-list a, .cta-button');
     
     navLinks.forEach(link => {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    /* Contact From */
+    // Contact From 
 
     const contactForm = document.getElementById('contact-form');
     const successMessage = document.getElementById('success-message');
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    /*  Active Nav*/
+    // Active Nav
     const sections = document.querySelectorAll('section[id]');
     const dockLinks = document.querySelectorAll('.dock-list a');
 
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    /* Scroll AAnimation */
+    // Scroll AAnimation 
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loaderText.textContent = `${Math.floor(progress)}%`;
         }, interval);
 
-        // ---- Card Animation Sequence
+        // Card Animation Sequence
         function animateCard() {
 
             introCard.style.top = '50%';

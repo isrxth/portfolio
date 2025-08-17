@@ -112,7 +112,7 @@ body {
     z-index: 1000;
     background: var(--bg-tertiary);
     border: 2px solid var(--border-color);
-    border-radius: 50%;
+    border-radius: 25%;
     width: 40px;
     height: 40px;
     display: flex;
@@ -208,7 +208,7 @@ body {
 }
 
 .sharp {
-    filter: blur(0px);         /* end sharp */
+    filter: blur(0px);        
     opacity: 1;
 }
 
@@ -315,8 +315,9 @@ body {
 }
 
 .hero-name {
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(var(--font-size-3xl), 6vw, var(--font-size-4xl));
-    font-weight: 600;
+    font-weight: 800;
     color: var(--text-primary);
     margin-bottom: var(--space-md);
     letter-spacing: -0.02em;
@@ -326,10 +327,10 @@ body {
     font-size: var(--font-size-xl);
     color: var(--text-secondary);
     margin-bottom: var(--space-2xl);
-    font-weight: 300;
+    font-weight: 500;
 }
 
-.cta-button {
+.contact-button {
     display: inline-block;
     font-family: fantasquesans-mono, monospace;
     background: var(--accent-secondary);
@@ -342,7 +343,7 @@ body {
     box-shadow: 6px 6px 0px var(--shadow);
 }
 
-.cta-button:hover {
+.contact-button:hover {
     background: var(--accent-tertiary);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px var(--accent-glow);
@@ -415,6 +416,9 @@ section:hover {
 }
 
 /* About Section */
+.about-section {
+    min-height: 91vh;
+}
 
 .neofetch-container {
     background: var(--bg-primary);
@@ -444,20 +448,20 @@ section:hover {
 
 .neofetch-line {
     display: flex;
-    margin-bottom: var(--space-xs);
+    margin-bottom: 2px;
     font-size: var(--font-size-sm);
 }
 
 .neofetch-line2 {
     display: flex;
-    margin-bottom: var(--space-xs);
+    margin-bottom: 2px;
     font-size: var(--font-size-sm);
 }
 
 .neofetch-label {
     color: var(--accent-secondary);
     font-weight: bold;
-    min-width: 120px;
+    /*min-width: 120px;*/
     margin-right: var(--space-md);
 }
 
@@ -468,14 +472,12 @@ section:hover {
 
 .neofetch-colors {
     display: flex;
-    gap: 4px;
     margin-top: var(--space-md);
 }
 
 .color-block {
     width: 20px;
     height: 20px;
-    border-radius: 2px;
 }
 
 .color-block:nth-child(1) { background: #cc241d; }
@@ -488,7 +490,9 @@ section:hover {
 .color-block:nth-child(8) { background: #928374; }
 
 .skill-bar {
+    width: 185px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: var(--space-sm);
 }
@@ -898,6 +902,10 @@ section:hover {
         padding: var(--space-xl) var(--space-md);
         margin: var(--space-md);
     }
+
+    .about-section {
+        min-height: 97vh;
+}
     
     .theme-toggle {
         top: var(--space-md);
@@ -966,7 +974,7 @@ section:hover {
         font-size: var(--font-size-lg);
     }
     
-    .cta-button {
+    .contact-button {
         padding: var(--space-sm) var(--space-lg);
     }
     
